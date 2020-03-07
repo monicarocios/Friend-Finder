@@ -1,4 +1,4 @@
 # FriendFinder
 
 Heroku Deployed Link:
-https://shielded-garden-72793.herokuapp.com/
+https://friendfinder0101.herokuapp.com/
