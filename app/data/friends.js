@@ -1,4 +1,4 @@
-var friend = [
+var friends = [
     {
         name: "Michelle Obama",
         photo:"https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.biography.com%2F.image%2Ft_share%2FMTY2NjgyMjEwMDQzMTc1OTkx%2Fmichelle_obama_first_official_portrait_as_first_lady.jpg&imgrefurl=https%3A%2F%2Fwww.biography.com%2Fus-first-lady%2Fmichelle-obama&tbnid=juaxwNqYWku-9M&vet=12ahUKEwjL8_GxuIToAhUP3awKHSbhBVwQMygBegUIARCLAg..i&docid=ucGin756xgdiIM&w=1200&h=1200&q=michelle%20obama&ved=2ahUKEwjL8_GxuIToAhUP3awKHSbhBVwQMygBegUIARCLAg",
@@ -42,3 +42,5 @@ var friend = [
     },
 
 ];
+
+module.exports = friends;

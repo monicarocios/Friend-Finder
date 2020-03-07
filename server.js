@@ -3,29 +3,16 @@ var bodyParser = require("body-parser");
 var path = require("path");
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(express.static("./public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// Routes
-// require("./app/routing/apiRoutes")(app);
-// require("./app/routing/htmlRoutes")(app);
+app.use(express.static("app/public"));
 
-var syncOptions = { force: false };
+require("./app/routing/api-routes")(app);
+require("./app/routing/html-routes")(app);
 
-// If running a test, set syncOptions.force to true
-// clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-    syncOptions.force = true;
-}
-
-// Starting the server ----------------------------------------------/
-app.listen(PORT, function() {
-    console.log(
-        "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-});
-
-
+app.listen(port, () => console.log("Listening on port %s", port));
